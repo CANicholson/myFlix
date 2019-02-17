@@ -43,7 +43,7 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
 
 func videoHandler(w http.ResponseWriter, r *http.Request) {
 	file := r.URL.Path[len("/video/"):]
-	title := "video/" + file + ".mp4"
+	title := "static/" + file + ".mp4"
 	http.ServeFile(w, r, title)
 }
 
