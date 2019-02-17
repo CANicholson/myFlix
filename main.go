@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -47,8 +48,13 @@ func videoHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, title)
 }
 
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "You are at the index")
+}
+
 func main() {
 	http.HandleFunc("/view/", viewHandler)
 	http.HandleFunc("/video/", videoHandler)
+	http.HandleFunc("/", indexFunc)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
