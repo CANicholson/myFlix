@@ -44,7 +44,7 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
 
 func videoHandler(w http.ResponseWriter, r *http.Request) {
 	file := r.URL.Path[len("/video/"):]
-	title := "static/" + file + ".mp4"
+	title := "video/" + file + ".mp4"
 	http.ServeFile(w, r, title)
 }
 
@@ -55,6 +55,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/view/", viewHandler)
 	http.HandleFunc("/video/", videoHandler)
-	http.HandleFunc("/", indexFunc)
+	http.HandleFunc("/", indexHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
