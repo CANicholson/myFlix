@@ -3,17 +3,13 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"io/ioutil"
 	"log"
 	"net/http"
+	"path/filepath"
+	"strings"
 
 	"gopkg.in/mgo.v2"
 )
-
-type Page struct {
-	Title string
-	Body  []byte
-}
 
 type Movie struct {
 	Server int    `bson:"server" json:"server"`
@@ -23,16 +19,7 @@ type Movie struct {
 	Uuid   string `bson:"uuid" json:"uuid"`
 }
 
-var templates = template.Must(template.ParseFiles("view.html"))
-
-func loadPage(title string) (*Page, error) {
-	filename := title + ".txt"
-	body, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return nil, err
-	}
-	return &Page{Title: title, Body: body}, nil
-}
+var templates = template.Must(template.ParseFiles("main.html", "video.html"))
 
 func mainHandler(w http.ResponseWriter, r *http.Request) {
 	session, err := mgo.Dial("mongodb://callum:help@35.246.67.38:27017")
@@ -45,23 +32,22 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	title := r.URL.Path[len("/main/"):]
-	p, err := loadPage(title)
-
-	renderTemplate(w, "view", p)
+	for i := range result {
+		result[i].Thumb = strings.TrimSuffix(result[i].Thumb, filepath.Ext(result[i].Thumb))
+		result[i].File = strings.TrimSuffix(result[i].File, filepath.Ext(result[i].File))
+	}
+	renderTemplate(w, "main", &result)
 }
 
-func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
-	err := templates.ExecuteTemplate(w, tmpl+".html", p)
+func renderTemplate(w http.ResponseWriter, tmpl string, c *[]Movie) {
+	err := templates.ExecuteTemplate(w, tmpl+".html", c)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
 
 func videoHandler(w http.ResponseWriter, r *http.Request) {
-	file := r.URL.Path[len("/video/"):]
-	title := "video/" + file + ".mp4"
-	http.ServeFile(w, r, title)
+	http.ServeFile(w, r, "video.html")
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -70,7 +56,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/main/", mainHandler)
-	http.HandleFunc("/video/", videoHandler)
+	http.HandleFunc("/video", videoHandler)
 	http.HandleFunc("/", indexHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

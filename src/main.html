@@ -1,3 +1,3 @@
-<video >
-    <source src="http://35.230.159.128/videos/Blarg.mp4" type="video/mp4">
-</video>
+{{range .}}
+<a href="/video/{{.File}}"><img src="http://35.189.90.164/thumb/{{.Thumb}}"  draggable="false" /></a>
+{{end}}
