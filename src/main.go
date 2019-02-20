@@ -35,6 +35,11 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 	for i := range result {
 		result[i].Thumb = strings.TrimSuffix(result[i].Thumb, filepath.Ext(result[i].Thumb))
 		result[i].File = strings.TrimSuffix(result[i].File, filepath.Ext(result[i].File))
+		if result[i].Server == 1 {
+			result[i].Server = "35.189.90.164"
+		} else {
+			result[i].Server = "35.230.159.128"
+		}
 	}
 	renderTemplate(w, "main", &result)
 }
