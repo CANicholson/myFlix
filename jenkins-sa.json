@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ionicmaps-177010",
+  "private_key_id": "6887d5abf654d9defefe3d7f3413663a5ee843c7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQChJSYuJpug5OBl\nfyd+SdUTooBsVWwnZtoes58LQ/hcgF3o/oK7GtbYxYa0QvfZQ2oyh9nMGz81Yxrn\nQMTW1RjoMLSc0rOf5xwoCcTD/ehE/wqxVruMxhEE6ubtXMiIAHCK6AS1onudjK9l\nGtp4ioRaKKuk6mcn9Vp3PCov74gtvVPdrtSLCdVXCVLMngmVsoWt09Dq4rglhSVf\nv9Ru/kXHodus9W4bOFZxq+i7LOxYotGnfORRziHZ7gKcGAsbeUmKxo6r2LwM+GUR\nk4IrhpkVUWkZyslnyHXORGzoH1N29gBgA9xr2eXIlhry4DsFXz/vLy/1vMPk/GOm\nFzv9r1xXAgMBAAECggEATZH/6IxeMxup50HHxZON9ecuEbgnGWp5yfimMTqVZhXG\n3v8Q+Ddpv6yJ9OEdxOCeUNezYHynNzBPRY2Yk1++Hxs+/hSxMeKC28UkCkKB2iC5\nSXeaTaAUljzrT8xvnYQ0qLEaf0LJZaRQ1AcSrp7jKjFUusy5PnNtimMUXcHc2EL8\nhA9Zz9Uxe+55yc0luRAOLPfVjyC1Qe+jeTC4bcJ2KmyADBgBOocO15MCZGzxWdM/\nNdE8IYB4KGUArVWqvs0ZNo66UW9rKqa1nho9WzKT3BvYLAW6XU6mJJJPKdzF1s1U\nrfxnbyb0TUWgQdBs8+E0cNzPXnSNxX28+7ZdrE/MwQKBgQDZz60DB/Wo3PSsjc1j\njSAvHqg4liA3Fh759ZM6B5JxINtZlcpmJzoDObGuWV75lH4K74RFnIDCu0AyR9v9\nI1ScVu1eLHREdGW/lOHhabgScwM3koPSezxoVertwZpu2Pd+iojMM0sKtM3Ujccu\nM+twTsvSS3ZAg7eFGg7UMw5mFwKBgQC9ZgyUYMo2nophY7WRyAuCeNajMWfdA+rm\nMXqeCypgslud7F7YXSiDw5nbip1paOR8o3pSi5qR5iNeFCp2DaozWJ3maae5tdf/\nN6mxK23IC6Qt2oC7/pLp/qUewxkFpcuM/kCphCPDAtsFElmse0GaPTIL73Ak4iOl\n00gTHeLjwQKBgQC0GYKnlPdOL5Wo8H+6J0FLdQAH+iqdIg9vA94/B2/RVyfIxZDc\nMudHL3d6ALAFkwE9rZsjrCrT2d1VNhHzGDmoJECVtBBXYh+X8FVt++qWZr9sPhv9\n+KSUaSaefY1ixsiuu4ItxuPv8FyZurnNvGSbMqxaMMeQxNkEl+1XDPiE9QKBgDMx\nTCEm8EFHJPwh6UfYHFRNuSYvCnXQw0MpCI2DUxcD3oOXCiPNOlAzJHkUxGtjcK7H\nuR5qoYLiA5lANiHmm6R5RWSsFiu6HQHc178NkATMMLo8HyOxMaCRtavU7AR8xcH8\nTxoCn2/sa6q5RQe74QWBmO9k7pjpjt0ZeJfCMjuBAoGBANBbgOPoMV9osOMsfHKl\nsH92XX1dAGSXYHmAbdWpUBKYM4+nF0zk0QsJOS5sVQNn3fAppjPD1zkX9lQW8pUE\nyDGRD7s3Zqg8w8w2lLvCY11c5/7GXttggxTSYjLLlQMqmYpqBKeyB5CnDrJ03/km\neUkxA4tMzR+Qrl20HE0BlJbO\n-----END PRIVATE KEY-----\n",
+  "client_email": "jenkins@ionicmaps-177010.iam.gserviceaccount.com",
+  "client_id": "105977540095774466091",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jenkins%40ionicmaps-177010.iam.gserviceaccount.com"
+}
