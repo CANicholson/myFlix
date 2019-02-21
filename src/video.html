@@ -1,3 +1,7 @@
-<video >
-    <source src="http://35.189.90.164/video/callum" type="video/mp4">
-</video>
+<html> 
+{{range .}}
+<video controls>
+    <source src="http://{{.IP}}/video/{{.File}}" type="video/mp4">
+</video > 
+{{end}}
+</html>
