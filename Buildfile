@@ -1,3 +1,4 @@
+cd ..
 sudo docker stop working
 sudo docker rm working
 
