@@ -76,7 +76,7 @@ func videoHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "You are at the index")
+	http.Redirect(w, r, "/main/", http.StatusFound)
 }
 
 func main() {
